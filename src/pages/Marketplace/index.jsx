@@ -1,20 +1,49 @@
-import React from "react";
+
+import React, { useState, useEffect } from "react";
 import styles from "./styles.module.css";
+import { getCharacter } from '../../services/animeApi';
 import { Card } from "../../components/Card";
-import { cards } from "../../Services/cardsData";
+import { generateRandomPrice } from "../../functions/generateRandomPrice";
+import { FilterButton } from "../../components/Button";
 
 export const Marketplace = () => {
+  const [characterList, setCharacterList] = useState([])
+  const [category, setCategory] = useState('anime');
+
+
+  useEffect(() => {
+    getApiData(category);
+  }, [category]);
+
+  const getApiData = async (category) => {
+    try {
+      const response = await getCharacter(category);
+      const results = response.data.data;
+
+      const resultsToCard = results.map((item) => ({
+        title: category == 'personagem' ? item.name : item.title,
+        price: generateRandomPrice(),
+        img: item.images.jpg.image_url,
+        raridade: 'comum'
+      }));
+      setCharacterList(resultsToCard);
+
+    } catch {
+      console.log('deu erro');
+    }
+  }
 
   return (
     <div className={styles.container}>
-      <h1>TESTE</h1>
+      <h1>Marketplace</h1>
+      <FilterButton title={"Personagens"} onClick={() => setCategory('personagem')} />
+      <FilterButton title={"Animes"} onClick={() => setCategory('anime')} />
       <section className={styles.catalogo}>
-        {cards.map((data, index) => { 
-            return (
-              <Card key={index} cardProps={data} />
-            )
-        }
-        )}
+        {characterList.map((data, index) => {
+          return (
+            <Card key={index} cardProps={data} />
+          )
+        })}
       </section>
     </div>
   );

@@ -7,3 +7,9 @@ export const BuyButton = ({title, ...rest}) => {
         {title}
     </button>
 }
+
+export const FilterButton = ({title, onClick}) => {
+    return <button onClick={onClick} className={styles.filterButton}>
+        {title}
+    </button>
+} 
