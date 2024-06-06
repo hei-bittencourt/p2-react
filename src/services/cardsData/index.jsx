@@ -34,7 +34,7 @@ export const cards = [
     raridade: 'lendária'
   },
   {
-    title: 'É o Bonnes Vida',
+    title: 'É o Bonnes, Vida',
     price: '0.01 ETH',
     img: bonafe,
     raridade: 'lendária'

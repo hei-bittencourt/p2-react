@@ -17,7 +17,7 @@ export const Card = ({ cardProps }) => {
           <p>{cardProps.price} { <FaEthereum color="c0c0c0"/>} </p>
         </div>
         <div>
-          <BuyButton />
+          <BuyButton title = {"Buy"} />
         </div>
       </div>
     </section>

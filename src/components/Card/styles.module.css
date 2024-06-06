@@ -14,12 +14,13 @@
         #212127,
         #32394b
     );
+    transition: .5s ease-in-out;
 }
 
 .card:hover{
     scale:1.05;
     box-shadow: -7px 6px 20px 2px black;
-    transition: .5s;
+    transition: .5s ease-in-out;
 }
 
 .content{    
@@ -74,13 +75,15 @@
     );
     cursor: pointer;
     position: relative;
+    transition: .5s ease-in-out;
     
 }
 
 .cardLendario:hover{
     scale:1.05;
     box-shadow: -2px 5px 20px 10px #dda520;
-    transition: .5s;
+    transition: .4s ease-in-out;
+
 }
 
 .contentLendario{    
