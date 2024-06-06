@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./styles.module.css";
 import { Card } from "../../components/Card";
-import { cards } from "../../Services/cardsData";
+import { cards } from "../../services/cardsData";
 
 export const Marketplace = () => {
 
