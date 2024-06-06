@@ -5,7 +5,7 @@
     border-radius: 10px;
     box-shadow:  5px 5px 10px #22222270;
     margin: 10px;
-    padding: 20px;
+    padding: 20px 20px 5px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,27 +15,29 @@
         #32394b
     );
     transition: .5s ease-in-out;
+    overflow: hidden;
 }
 
 .card:hover{
-    scale:1.05;
+    transform: scale(1.05);
     box-shadow: -7px 6px 20px 2px black;
     transition: .5s ease-in-out;
 }
 
 .content{    
-    width: fit-content; 
+    width: 100%; 
     display: flex;
     align-items: center;
     justify-content: center;
     border: solid 1px gray;
     border-radius: 10px;
+    margin-bottom: 5px;
 }
 
 .image {
     width: 100%;
-    border-radius: 10px;
-  
+    height: 300px;
+    border-radius: 10px;  
 }
 
 .cardFooter {
@@ -45,16 +47,19 @@
     justify-content: space-between;
     position: relative;
     z-index: 2;
+    overflow: hidden;
+
 }
 
 .info{ 
-    font-size: 20px;
+    font-size: 17px;
     color: #ffffff;    
+    margin-right: 4px;
 }
 
 .info p{
-   display: flex;
-   gap: 5px;
+    display: flex;
+    gap: 5px;
 }
 
 .cardLendario{
