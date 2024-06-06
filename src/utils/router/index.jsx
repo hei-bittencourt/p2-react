@@ -4,6 +4,7 @@ import { Home } from '../../pages/Home/index.jsx';
 import { Marketplace } from '../../pages/Marketplace/index.jsx';
 import { MarketplaceLendario } from '../../pages/MarketplaceLendario/index.jsx';
 import ErrorPage from '../../pages/Error/index.jsx';
+import { Cart } from './../../pages/Cart/index';
 
 
 export const router = createBrowserRouter([
@@ -21,10 +22,10 @@ export const router = createBrowserRouter([
     path: "/marketplace/lendarias",
     element: <MarketplaceLendario />,
     errorElement: <ErrorPage />,
+  },
+    path: "/carrinho",
+    element: <Cart />,
+    errorElement: <ErrorPage />
   }
-  // {
-  //   path: "/carrinho",
-  //   element: <Carrinho />,
-  //   errorElement: <ErrorPage />
-  // }
+
 ]);

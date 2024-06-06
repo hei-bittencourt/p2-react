@@ -3,6 +3,7 @@ import styles from "./styles.module.css";
 import { BuyButton } from "../Button";
 import { FaEthereum } from "react-icons/fa";
 
+
 export const Card = ({ cardProps }) => {
   const isLendario = cardProps.raridade != 'comum';
 
@@ -17,7 +18,7 @@ export const Card = ({ cardProps }) => {
           <p>{cardProps.price} { <FaEthereum color="c0c0c0"/>} </p>
         </div>
         <div>
-          <BuyButton title = {"Buy"} />
+          <BuyButton  title = {"Buy"} />
         </div>
       </div>
     </section>

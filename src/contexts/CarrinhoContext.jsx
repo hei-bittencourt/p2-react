@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
 import React, { createContext, useState } from "react";
 
 export const ContextoCarrinho = createContext();
@@ -9,18 +7,21 @@ export const ProvedorCarrinho = ({ children }) => {
   const [carrinhoAberto, setCarrinhoAberto] = useState(false);
 
   const adicionarItemCarrinho = (item) => {
-    setItensCarrinho((itensAnteriores) => [...itensAnteriores, item]);
+    setItensCarrinho([...itensAnteriores, item]);
   };
 
   const removerItemCarrinho = (itemId) => {
-    setItensCarrinho((itensAnteriores) =>
-      itensAnteriores.filter((item) => item.id !== itemId)
+    setItensCarrinho(itensAnteriores.filter((item) => item.id !== itemId)
     );
   };
 
   const alternarCarrinho = () => {
     setCarrinhoAberto(!carrinhoAberto);
   };
+
+  const calcularTotal = () => {
+    return itensCarrinho.reduce((total, item) => total + item.preco * item.quantidade, 0)
+  }
 
   return (
     <ContextoCarrinho.Provider
@@ -30,6 +31,7 @@ export const ProvedorCarrinho = ({ children }) => {
         removerItemCarrinho,
         carrinhoAberto,
         alternarCarrinho,
+        calcularTotal,
       }}
     >
       {children}
