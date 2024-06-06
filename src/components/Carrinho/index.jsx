@@ -33,7 +33,7 @@ export const Carrinho = () => {
 };
 
 export const ModeloCarrinho = () => {
-  const { carrinhoAberto, toggalternarCarrinho leCart } = useContext(ContextoCarrinho);
+  const { carrinhoAberto, toggalternarCarrinho, leCart } = useContext(ContextoCarrinho);
   return (
     <Modal
       isOpen={carrinhoAberto}
