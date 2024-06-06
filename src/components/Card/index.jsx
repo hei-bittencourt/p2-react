@@ -16,7 +16,7 @@ export const Card = ({ title, price, img }) => {
           <p> {price}</p>
         </div>
         <div>
-          <BuyButton />
+          <BuyButton title = {"Buy"} />
         </div>
       </div>
     </section>
