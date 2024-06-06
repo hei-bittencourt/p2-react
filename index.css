@@ -1,5 +1,11 @@
 :root {
     margin: 0;
     padding: 0;
-    background-color: #340B52;
+
+    background:linear-gradient(
+        #522B92,
+        #000000
+    );
+    background-repeat: no-repeat;
+    background-size: cover; 
 }

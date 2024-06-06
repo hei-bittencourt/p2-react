@@ -1,16 +1,19 @@
 .card {
     width: 300px;
     height: 400px;
-    background-color: #6640b8;
-    border: solid 1px;
+    border: solid 1px #c0c0c0;
     border-radius: 10px;
-    box-shadow: 5px 5px 10px #22222270;
+    box-shadow:  5px 5px 10px #22222270;
     margin: 10px;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    background: linear-gradient(
+        #212127,
+        #32394b
+    );
 }
 
 .card:hover{
@@ -20,17 +23,17 @@
 }
 
 .content{    
-    width: fit-content;    
+    width: fit-content; 
     display: flex;
     align-items: center;
     justify-content: center;
-    border: solid 1px;
+    border: solid 1px gray;
+    border-radius: 10px;
 }
 
 .image {
     width: 100%;
-    border-radius: 5px;
-    background-color: #9a5ec0;
+    border-radius: 10px;
   
 }
 
@@ -39,9 +42,66 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
+    z-index: 2;
 }
 
 .info{ 
     font-size: 20px;
     color: #ffffff;    
+}
+
+.info p{
+   display: flex;
+   gap: 5px;
+}
+
+.cardLendario{
+    width: 300px;
+    height: 400px;
+    border: solid 1px #dda520;
+    border-radius: 10px;
+    box-shadow:  5px 10px 10px #ebc80470;
+    margin: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(
+        #1e1e3f,
+        #1c2953
+    );
+    cursor: pointer;
+    position: relative;
+    
+}
+
+.cardLendario:hover{
+    scale:1.05;
+    box-shadow: -2px 5px 20px 10px #dda520;
+    transition: .5s;
+}
+
+.contentLendario{    
+    width: fit-content; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px #dda520;
+    border-radius: 10px;
+}
+
+.cardLendario::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 2px solid #FFD700;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    pointer-events: none;
+    z-index: 1;
 }
