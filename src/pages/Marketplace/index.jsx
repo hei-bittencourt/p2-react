@@ -7,11 +7,9 @@ import { generateRandomPrice } from "../../functions/generateRandomPrice";
 import { FilterButton } from "../../components/Button";
 
 
-
 export const Marketplace = () => {
   const [characterList, setCharacterList] = useState([])
   const [category, setCategory] = useState('anime');
-
 
   useEffect(() => {
     getApiData(category);
