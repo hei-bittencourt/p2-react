@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {postUser} from '../../services/userApi/index.jsx'
 import styles from './styles.module.css'
+import { useNavigate } from 'react-router-dom';
 
 export const SignUp = () => {
   const [userData, setUserData] = useState({
@@ -8,6 +9,7 @@ export const SignUp = () => {
     email: '',
     password: ''
   }) 
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,6 +24,8 @@ export const SignUp = () => {
 
     console.log(userData)
     postUser(userData)
+    navigate('/login')
+
       
   };
 
