@@ -3,7 +3,7 @@ import React, { createContext, useEffect, useState } from "react";
 export const ContextoCarrinho = createContext();
 
 export const ProvedorCarrinho = ({ children }) => {
-  const [itensCarrinho, setItensCarrinho] = useState([{}]);
+  const [itensCarrinho, setItensCarrinho] = useState([]);
   const [carrinhoAberto, setCarrinhoAberto] = useState(false);
 
   useEffect(() => {
@@ -11,23 +11,26 @@ export const ProvedorCarrinho = ({ children }) => {
     if (carrinhoStorage) {
       setItensCarrinho(JSON.parse(carrinhoStorage));
     }
-  },[])
-
+  }, [])
+  
   const adicionarItemCarrinho = (novoItem) => {
     setItensCarrinho((itensAnteriores) => {
-      const itemExistente = itensAnteriores.find((item) => item.id === novoItem.id);
+      const itemExistente = itensAnteriores.find((item) => item.title === novoItem.title);
       if (itemExistente) {
-        return itensAnteriores.map((item) =>
-          item.id === novoItem.id ? { ...item, quantidade: item.quantidade + 1 } : item
+        const carrinhoAtualizado = itensAnteriores.map((item) =>
+          item.title === novoItem.title ? { ...item, quantidade: item.quantidade + 1 } : item
         );
+        localStorage.setItem("itens-carrinho", JSON.stringify(carrinhoAtualizado));
+        return carrinhoAtualizado
       }
-      localStorage.setItem("itens-carrinho",JSON.stringify([...itensAnteriores, novoItem]) )
-      return [...itensAnteriores, novoItem];
+      const novoCarrinho = [...itensAnteriores, { ...novoItem, quantidade: 1 }];
+      localStorage.setItem("itens-carrinho", JSON.stringify(novoCarrinho));
+      return novoCarrinho
     });
   };
 
-  const removerItemCarrinho = (itemId) => {
-    const novoCarrinho = itensCarrinho.filter((item) => item.id !== itemId)
+  const removerItemCarrinho = (itemTitle) => {
+    const novoCarrinho = itensCarrinho.filter((item) => item.title !== itemTitle)
     setItensCarrinho(novoCarrinho);
     localStorage.setItem("itens-carrinho",JSON.stringify(novoCarrinho) )
   };
@@ -37,7 +40,7 @@ export const ProvedorCarrinho = ({ children }) => {
   };
 
   const calcularTotal = () => {
-    return itensCarrinho.reduce((total, item) => total + item.preco * item.quantidade, 0)
+    return itensCarrinho.reduce((price, item) => price + item.price * item.quantidade, 0)
   }
 
   return (
