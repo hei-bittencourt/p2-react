@@ -1,38 +1,61 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import styles from './styles.module.css';
+import {getUser} from '../../services/userApi/index.jsx';
+import { useNavigate } from 'react-router-dom';
 
-const LoginPage = () => {
-  const [formData, setFormData] = useState({
+export const Login = () => {
+  const [userData, setUserData] = useState({
     email: '',
     password: ''
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+  const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    
+  const userExists = async (email, password) => {
     try {
-      const response = await axios.post('URL_DA_API/login', formData);
-      console.log('Resposta da API:', response.data);
+      const response = await getUser();
+      const users = response.data;
+
+      const user = users.find((user) => user.body.email == email && user.body.password == password);
+    
+      return user ? true : false;
     } catch (error) {
-      console.error('Erro ao fazer login:', error);
+        console.error('Erro ao verificar usuário:', error);
+        return false;
     }
   };
 
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    const { email, password } = userData; 
+    const user = await userExists(email, password);
+
+    if(user){
+      alert('Logado com sucesso!')
+      navigate('/')
+    }else{
+      alert('Dados incorretos.')
+    }
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUserData({
+      ...userData,
+      [name]: value
+    });
+  };
+
   return (
-    <div>
+    <div className={styles.containerPrincipal}>
       <h2>Log In</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleLogin} className={styles.loginForm}>
         <label>
           Email:
           <input
             type="email"
             name="email"
-            value={formData.email}
+            value={userData.email}
             onChange={handleChange}
           />
         </label>
@@ -41,7 +64,7 @@ const LoginPage = () => {
           <input
             type="password"
             name="password"
-            value={formData.password}
+            value={userData.password}
             onChange={handleChange}
           />
         </label>
@@ -50,5 +73,3 @@ const LoginPage = () => {
     </div>
   );
 };
-
-export default LoginPage;

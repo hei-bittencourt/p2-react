@@ -1,39 +1,41 @@
 import React, { useState } from 'react';
-import axios from 'axios';
-import {postUser} from '../../services/cadastroApi/index.jsx'
+import {postUser} from '../../services/userApi/index.jsx'
+import styles from './styles.module.css'
 
-export const SignUpPage = () => {
-  const [name, setName] = useState(
-  );
-  const [email, setEmail] = useState(
-  );
-  const [password, setPassword] = useState(
-  );
+export const SignUp = () => {
+  const [userData, setUserData] = useState({
+    name: '',
+    email: '',
+    password: ''
+  }) 
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUserData({
+      ...userData,
+      [name]: value
+    });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const usuario = {
-      name : name,
-      email : email,
-      password : password,
-    }
-    
-    console.log(usuario)
-    postUser(usuario)
+    console.log(userData)
+    postUser(userData)
       
   };
 
   return (
-    <div>
+    <div className={styles.containerPrincipal}>
       <h2>Sign Up</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className={styles.signupForm}>
         <label>
           Name:
           <input
             type="text"
             name="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            value={userData.name}
+            onChange={handleChange}
           />
         </label>
         <label>
@@ -41,8 +43,8 @@ export const SignUpPage = () => {
           <input
             type="email"
             name="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={userData.email}
+            onChange={handleChange}
           />
         </label>
         <label>
@@ -50,8 +52,8 @@ export const SignUpPage = () => {
           <input
             type="password"
             name="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={userData.password}
+            onChange={handleChange}
           />
         </label>
         <button type="submit">Sign Up</button>
@@ -59,6 +61,3 @@ export const SignUpPage = () => {
     </div>
   );
 };
-
-export default SignUpPage;
-

@@ -26,7 +26,11 @@
 .loginForm h1 {
     color: #49086e;
     margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 
 .loginForm input {
     width: 100%;
