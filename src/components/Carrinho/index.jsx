@@ -1,27 +1,41 @@
 import React, { useContext } from "react";
 import { ContextoCarrinho } from "../../contexts/CarrinhoContext";
-import Modal from "react-modal";
+import { FaEthereum } from "react-icons/fa";
+import { RemoveButton } from "./../Button/index";
 import styles from "./styles.module.css";
 
 export const Carrinho = () => {
   const { itensCarrinho, removerItemCarrinho } = useContext(ContextoCarrinho);
-  console.log(itensCarrinho);
+
   return (
     <div className={styles.container}>
-      <h2 className={styles.h2}>Carrinho de Compras </h2>
-      <ul>
+      <h2 className={styles.h2}>Carrinho de Compras</h2>
+
+      <div className={styles.gridContainer}>
         {itensCarrinho.map((item, index) => (
-          <li key={index}>
-            {item.title} - R$ {item.price.toFixed(2)} x {item.quantidade}
-            <button className={styles.removeButton} onClick={() => removerItemCarrinho(item.id)}>
-              Remove
-            </button>
-          </li>
+          <div key={index} className={styles.gridItem}>
+            <div>
+              {item.img && <img src={item.img} alt={item.title} className={styles.image} />}
+            </div>
+            <div className={styles.cardFooter}>
+              <div className={styles.info}>
+                <p>{item.title}</p>
+                <p>
+                  {item.price} <FaEthereum color="#c0c0c0" />
+                </p>
+              </div>
+              <RemoveButton
+                title={"Remover"}
+                onClick={() => removerItemCarrinho(item.id)}
+              />
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
+
 
 export const ModeloCarrinho = () => {
   const { carrinhoAberto, alternarCarrinho } = useContext(ContextoCarrinho);

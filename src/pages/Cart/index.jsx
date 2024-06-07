@@ -14,7 +14,7 @@ export const Cart = () => {
       <Header />
 
       <section className={styles.body}>
-        <div className={styles.info}>
+        <div className={styles.catalogo}>
           <Carrinho
             itensCarrinho={itensCarrinho}
             removerItemCarrinho={removerItemCarrinho}

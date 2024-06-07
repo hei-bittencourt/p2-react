@@ -1,5 +1,5 @@
 .container{
-    /* background-color: aqua; */
+    background-color: aqua;
     display:flex;
     justify-content: center;
     align-items: center;
@@ -8,23 +8,81 @@
 
 .h2{
     color: aliceblue;
+    text-align: center;
     font-size: 24px;
+    margin-bottom: 20px ;
 }
 
-.removeButton{
-    width: 70px;
-    height: 45px;
-    border: 0;
-    border-radius: 15px;
-    background-color: #333;
-    color: whitesmoke;
-    font-size: 15px;
+.image {
+    width: 100px;
+    height: 300px;
+    border-radius: 10px;  
+
+}
+.ul{
+    display: table-column;
+    justify-content: center;
+}
+.cardFooter {
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    cursor: pointer;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+
 }
-.removeButton:hover{
-    background-color: red;
-    transition: all .5s;
+.info{ 
+    font-size: 1px;
+    color: #ffffff;    
+    margin-right: 4px;
 }
+.info p{
+    display: flex;
+    gap: 5px;
+}
+
+/* .container {
+    background-color: aqua;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .gridContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .gridItem {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .image img {
+    width: 100vh;
+    height: auto;
+  }
+  
+  .cardFooter {
+    padding: 10px;
+  }
+  
+  .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+   */

@@ -5,17 +5,19 @@ import { getCharacter } from '../../Services/animeApi';
 import { Card } from "../../components/Card";
 import { generateRandomPrice } from "../../functions/generateRandomPrice";
 import { FilterButton } from "../../components/Button";
+
 import { HeaderMarket } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import { CategoryContext } from "../../contexts/CategoryContext";
-
+import { UserContext } from "../../contexts/userContext";
 
 
 
 export const Marketplace = () => {
   const [characterList, setCharacterList] = useState([]) 
   const {category} = useContext(CategoryContext)
- 
+  const {user} = useContext(UserContext);
+
 
   useEffect(() => {
     getApiData(category);
