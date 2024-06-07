@@ -1,8 +1,9 @@
 import React, { useContext, useState } from 'react';
 import styles from './styles.module.css';
-import {getUser} from '../../services/userApi/index.jsx';
+import { getUser } from '../../services/userApi/index.jsx';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../../contexts/userContext.jsx';
+
 
 export const Login = () => {
   const [userData, setUserData] = useState({
@@ -11,7 +12,7 @@ export const Login = () => {
   });
 
   const navigate = useNavigate();
-  const {setUser} = useContext(UserContext)
+  const { saveUser } = useContext(UserContext)
 
   const userExists = async (email, password) => {
     try {
@@ -19,25 +20,24 @@ export const Login = () => {
       const users = response.data;
 
       const user = users.find((user) => user.body.email == email && user.body.password == password);
-    
+
       return user || null;
     } catch (error) {
-        console.error('Erro ao verificar usuário:', error);
-        return null;
+      console.error('Erro ao verificar usuário:', error);
+      return null;
     }
   };
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    const { email, password } = userData; 
+    const { email, password } = userData;
     const user = await userExists(email, password);
 
-    if(user){
-      setUser(user.body);
-      localStorage.setItem('user', user.body.name)
+    if (user) {
+      saveUser(user.body);
       alert('Logado com sucesso!')
       navigate('/')
-    }else{
+    } else {
       alert('Dados incorretos.')
     }
   };

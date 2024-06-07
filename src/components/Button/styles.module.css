@@ -35,8 +35,6 @@
     color: #9e02f8;
     text-shadow: -7px 6px 20px  black;
     transition: .5s ease-in-out;  
-    background-color: #31023f;
-    transition: all .5s;
 }
 
 .removeButton{

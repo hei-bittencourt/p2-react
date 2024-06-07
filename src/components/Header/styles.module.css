@@ -42,3 +42,8 @@
    display: flex;
    gap: 5rem;
 }
+
+.header p{
+    color: white;  
+    
+}
