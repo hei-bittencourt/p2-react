@@ -19,17 +19,22 @@
 }
 
 .filterButton {
+    color: #ffff;
+    font-size: 1.8rem;    
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100px;
-    height: 40px;
-    border: solid 1px orange;
+    border: 0;
+    background-color: transparent;    
     cursor: pointer; 
+    transition: .5s ease-in-out;
+    
 }
 
 .filterButton:hover {
-  
+    color: #9e02f8;
+    text-shadow: -7px 6px 20px  black;
+    transition: .5s ease-in-out;  
     background-color: #31023f;
     transition: all .5s;
 }
