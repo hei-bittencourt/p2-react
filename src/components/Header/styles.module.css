@@ -37,3 +37,8 @@
     text-shadow: -7px 6px 20px  black;
     transition: .5s ease-in-out;
 }
+
+.header nav  {
+   display: flex;
+   gap: 5rem;
+}

@@ -1,17 +1,21 @@
-.container{
-    margin: 0;
-
- }
+.containerPrincipal {
+   position: absolute;
+   top: 0;
+   left: 0;   
+   width: 100%;
+   background: linear-gradient(150deg, #49086e 0%, #110720 50%, #110720 100%);
+}
  
- 
- .catalogo {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-block: 1rem;
-    max-width: 1650px;
-    margin: 0 auto;
- }
+.catalogo {
+   width: 100%;
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: center;
+   padding-top: 12rem;
+   padding-bottom: 12rem;
+   gap: 1.5rem;
+   margin-block: 1rem;
+   max-width: 1650px;
+   margin: 0 auto;
+}

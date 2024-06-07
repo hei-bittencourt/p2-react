@@ -23,6 +23,7 @@ export const router = createBrowserRouter([
     element: <MarketplaceLendario />,
     errorElement: <ErrorPage />,
   },
+  {
     path: "/carrinho",
     element: <Cart />,
     errorElement: <ErrorPage />
