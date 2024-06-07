@@ -54,3 +54,20 @@
     background-color: red;
     transition: all .5s;
 }
+.finalyButton{
+    width: 100px;
+    height: 55px;
+    border: 0;
+    border-radius: 15px;
+    background-color: #333;
+    color: whitesmoke;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.finalyButton:hover{
+    background-color: green;
+    transition: all .5s;
+}

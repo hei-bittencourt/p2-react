@@ -18,4 +18,10 @@ export const RemoveButton = ({ title, ...rest }) => {
         {title}
     </button>
 }
+export const FinalyButton = ({ title, ...rest }) => {
+    return <button className={styles.finalyButton} {...rest}>
+        {title}
+    </button>
+}
+
 

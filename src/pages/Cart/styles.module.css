@@ -8,7 +8,6 @@
     background: linear-gradient(150deg, #49086e 0%, #110720 50%, #110720 100%);
 }
 
-
 .body {
     width: 100%;
     height: 90vh;
@@ -17,14 +16,6 @@
     justify-content: center;
         
 }
-
-.body p {
-    font-size: 3.5rem;
-    color: #ffffff;
-    font-weight: lighter;
-    margin-left: 2.5rem;
-}
-
 .body span {
     font-size: 4rem;    
     font-weight: bold;
@@ -35,22 +26,14 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-
-.body figure {
-    margin: 0;
-}
-
-.body img {
-    height: 38rem;    
-    margin-top: 13rem;
-    
-}
 .catalogo {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    padding-top: 12rem;
+    padding-bottom: 12rem;
     gap: 1.5rem;
     margin-block: 1rem;
     max-width: 1650px;
