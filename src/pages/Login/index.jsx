@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import styles from './styles.module.css';
 import {getUser} from '../../services/userApi/index.jsx';
 import { useNavigate } from 'react-router-dom';
+import { UserContext } from '../../contexts/userContext.jsx';
 
 export const Login = () => {
   const [userData, setUserData] = useState({
@@ -10,6 +11,7 @@ export const Login = () => {
   });
 
   const navigate = useNavigate();
+  const {setUser} = useContext(UserContext)
 
   const userExists = async (email, password) => {
     try {
@@ -18,10 +20,10 @@ export const Login = () => {
 
       const user = users.find((user) => user.body.email == email && user.body.password == password);
     
-      return user ? true : false;
+      return user || null;
     } catch (error) {
         console.error('Erro ao verificar usuário:', error);
-        return false;
+        return null;
     }
   };
 
@@ -31,6 +33,8 @@ export const Login = () => {
     const user = await userExists(email, password);
 
     if(user){
+      setUser(user.body);
+      localStorage.setItem('user', user.body.name)
       alert('Logado com sucesso!')
       navigate('/')
     }else{
