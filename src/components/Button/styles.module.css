@@ -33,3 +33,21 @@
     background-color: #31023f;
     transition: all .5s;
 }
+
+.removeButton{
+    width: 70px;
+    height: 45px;
+    border: 0;
+    border-radius: 15px;
+    background-color: #333;
+    color: whitesmoke;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.removeButton:hover{
+    background-color: red;
+    transition: all .5s;
+}
