@@ -14,3 +14,9 @@ export const FilterButton = ({title, onClick}) => {
         {title}
     </button>
 } 
+
+export const RemoveButton = ({ title, ...rest }) => {
+    return <button className={styles.removeButton} {...rest}>
+        {title}
+    </button>
+}
