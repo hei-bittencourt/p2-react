@@ -5,15 +5,18 @@ const apiMock = axios.create({
     headers: {
         'Content-Type': 'application/json'
     }
-
-
-
 });
 
 export function postUser(usuario) {
-    const url = '/nft/register';
+    const url = 'nft/register';
 
     console.log(usuario)
     return apiMock.post(url, {body: usuario}).then(url).catch(console.error());
 
+}
+
+export function getUser(){
+    const url = `nft/register`;
+
+    return apiMock.get(url);
 }

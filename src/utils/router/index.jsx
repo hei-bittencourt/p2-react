@@ -5,13 +5,19 @@ import { Marketplace } from '../../pages/Marketplace/index.jsx';
 import { MarketplaceLendario } from '../../pages/MarketplaceLendario/index.jsx';
 import ErrorPage from '../../pages/Error/index.jsx';
 import { Cart } from './../../pages/Cart/index';
-import {SignUpPage} from '../../pages/SignUp/index.jsx'
+import {SignUp} from '../../pages/SignUp/index.jsx';
+import {Login} from '../../pages/Login/index.jsx';
 
 
 export const router = createBrowserRouter([
   {
     path: "/register",
-    element: <SignUpPage />,
+    element: <SignUp />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
     errorElement: <ErrorPage />,
   },
   {
@@ -34,5 +40,4 @@ export const router = createBrowserRouter([
     element: <Cart />,
     errorElement: <ErrorPage />
   }
-
 ]);
