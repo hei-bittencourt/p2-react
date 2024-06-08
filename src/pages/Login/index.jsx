@@ -1,9 +1,11 @@
+/* eslint-disable no-unused-vars */
 import React, { useContext, useState } from 'react';
 import styles from './styles.module.css';
 import { getUser } from '../../services/userApi/index.jsx';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../../contexts/userContext.jsx';
-
+import { Header } from '../../components/Header';
+import { Footer } from '../../components/Footer';
 
 export const Login = () => {
   const [userData, setUserData] = useState({
@@ -52,28 +54,41 @@ export const Login = () => {
 
   return (
     <div className={styles.containerPrincipal}>
-      <h2>Log In</h2>
-      <form onSubmit={handleLogin} className={styles.loginForm}>
-        <label>
-          Email:
-          <input
-            type="email"
-            name="email"
-            value={userData.email}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Password:
-          <input
-            type="password"
-            name="password"
-            value={userData.password}
-            onChange={handleChange}
-          />
-        </label>
-        <button type="submit">Login</button>
-      </form>
+      <Header />
+
+      <section className={styles.body}>
+        <div className={styles.containerForm}>
+          <form onSubmit={handleLogin} className={styles.loginForm}>
+            <h1>Login</h1>
+
+            <label>
+              <input
+                type="email"
+                placeholder="Email"
+                value={userData.email}
+                onChange={handleChange}
+              />
+            </label>
+
+            <label>
+              <input
+                type="password"
+                placeholder="Senha"
+                value={userData.password}
+                onChange={handleChange}
+              />
+            </label>
+
+            <div className={styles.recallForget}>
+              <a href="#">Esqueceu sua senha?</a>
+            </div>
+
+            <button type="submit">Entrar</button>
+          </form>
+        </div>
+      </section>
+
+      <Footer />
     </div>
   );
 };
