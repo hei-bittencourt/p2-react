@@ -45,7 +45,7 @@ export const SignUp = () => {
         <label>
           Email:
           <input
-            type="email"
+            type="email" 
             name="email"
             value={userData.email}
             onChange={handleChange}

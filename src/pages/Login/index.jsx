@@ -4,7 +4,7 @@ import styles from './styles.module.css';
 import { getUser } from '../../services/userApi/index.jsx';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../../contexts/userContext.jsx';
-import { Header } from '../../components/Header';
+import { HeaderLogin } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 
 export const Login = () => {
@@ -54,7 +54,7 @@ export const Login = () => {
 
   return (
     <div className={styles.containerPrincipal}>
-      <Header />
+      <HeaderLogin />
 
       <section className={styles.body}>
         <div className={styles.containerForm}>
@@ -64,6 +64,7 @@ export const Login = () => {
             <label>
               <input
                 type="email"
+                name="email"
                 placeholder="Email"
                 value={userData.email}
                 onChange={handleChange}
@@ -73,6 +74,7 @@ export const Login = () => {
             <label>
               <input
                 type="password"
+                name="password"
                 placeholder="Senha"
                 value={userData.password}
                 onChange={handleChange}
