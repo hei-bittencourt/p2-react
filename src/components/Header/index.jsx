@@ -10,13 +10,13 @@ export const Header = () => {
 
     return (
         <header className={styles.header}>
-            <Link className={styles.nomeLoja} to="/">Loja NFTs</Link>
-            <nav>
+            <Link className={styles.nomeLoja} to="/">NFTec</Link>
+            {user ? (<p>{user.name}</p> ) : null }
+            <nav>                
                 <Link to="/marketplace">Marketplace</Link>
                 <Link to="/carrinho">Carrinho</Link>
                 {user ? (
-                    <>
-                        <p>{user.name}</p>
+                    <>                        
                         <Link to="/login" onClick={logoutUser}>Logout</Link>
                     </>
                 ) : (
@@ -37,7 +37,7 @@ export const HeaderMarket = () => {
 
     return (
         <header className={styles.header}>
-            <Link className={styles.nomeLoja} to="/">Loja NFTs</Link>
+            <Link className={styles.nomeLoja} to="/">NFTec</Link>
             <nav>
                 <FilterButton title={"Animes"} onClick={() => setCategory('anime')} />
                 <FilterButton title={"Personagens"} onClick={() => setCategory('personagem')} />

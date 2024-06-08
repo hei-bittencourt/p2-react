@@ -1,10 +1,22 @@
-.containerPrincipal {
+.containerPrincipal {   
    position: absolute;
    top: 0;
    left: 0;   
    width: 100%;
+   height: auto;
    background: linear-gradient(150deg, #49086e 0%, #110720 50%, #110720 100%);
 }
+
+.body {
+   width: 100%;
+   
+   display: flex;
+   align-items: center;
+   justify-content: space-evenly;
+
+}
+
+
 
 
 
