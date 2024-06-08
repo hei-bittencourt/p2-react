@@ -1,4 +1,5 @@
 .header {
+    font-family: "PT Sans Norrow", monospace;
     width: 100vw;
     height: 60px;
     background-color: transparent;
@@ -9,10 +10,11 @@
     justify-content: space-around;
 
     position: absolute;
-    top: 2%;
+    top: 1rem;
 }
 
 .nomeLoja {
+    font-family: "PT Sans Norrow", monospace;
     text-decoration: none;
     color: #fff;
     font-size: 3.12rem;
@@ -23,8 +25,12 @@
     scale: 1.05;
     transition: .5s;
 }
+.header nav button {
+    font-family: "PT Sans Norrow", monospace;
+}
 
-.header nav a {    
+.header nav a {     
+       
     text-decoration: none;
     color: #fff;    
     padding-right: 5rem;
