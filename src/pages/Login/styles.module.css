@@ -12,13 +12,8 @@
     text-align: center;
 }
 
-.containerForm {
-    width: 350px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 3px;
-}
-
 .loginForm {
+    width: 320px;
     background-color: #8701d534;
     padding: 2rem 2em 2em 2em;
     border-radius: 10px;
@@ -44,8 +39,6 @@
     border: 1px solid #cd76ff;
 }
 
-
-
 .containerForm .recallForget {
     justify-content: center;
     font-family: sans-serif;
@@ -70,6 +63,7 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-bottom: 20px;
 }
 
 .loginForm button:hover {
