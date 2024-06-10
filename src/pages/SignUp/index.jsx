@@ -1,33 +1,32 @@
-/* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
-import {postUser} from '../../services/userApi/index.jsx'
-import styles from './styles.module.css'
-import { useNavigate } from 'react-router-dom';
-import { HeaderRegister } from '../../components/Header';
-import { Footer } from '../../components/Footer';
-import { toast } from 'react-toastify';
+import React, { useState } from "react";
+import { postUser } from "../../services/userApi/index.jsx";
+import styles from "./styles.module.css";
+import { useNavigate } from "react-router-dom";
+import { HeaderRegister } from "../../components/Header";
+import { Footer } from "../../components/Footer";
+import { toast } from "react-toastify";
 
 export const SignUp = () => {
   const [userData, setUserData] = useState({
-    name: '',
-    email: '',
-    password: ''
-  })
+    name: "",
+    email: "",
+    password: "",
+  });
   const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUserData({
       ...userData,
-      [name]: value
+      [name]: value,
     });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    postUser(userData)
-    toast.success('Usuário criado com sucesso!')
-    navigate('/login')
+    postUser(userData);
+    toast.success("Usuário criado com sucesso!");
+    navigate("/login");
   };
 
   return (
@@ -35,9 +34,8 @@ export const SignUp = () => {
       <HeaderRegister />
 
       <section className={styles.body}>
-
         <form onSubmit={handleSubmit} className={styles.signupForm}>
-        <h1>Registrar</h1>
+          <h1>Registrar</h1>
 
           <label>
             <input

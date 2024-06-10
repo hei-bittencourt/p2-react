@@ -1,32 +1,34 @@
-/* eslint-disable no-unused-vars */
-import React, { useContext, useState } from 'react';
-import styles from './styles.module.css';
-import { getUser } from '../../services/userApi/index.jsx';
-import { useNavigate } from 'react-router-dom';
-import { UserContext } from '../../contexts/userContext.jsx';
-import { HeaderLogin } from '../../components/Header';
-import { Footer } from '../../components/Footer';
-import { toast } from 'react-toastify';
+
+import React, { useContext, useState } from "react";
+import styles from "./styles.module.css";
+import { getUser } from "../../services/userApi/index.jsx";
+import { useNavigate } from "react-router-dom";
+import { UserContext } from "../../contexts/userContext.jsx";
+import { HeaderLogin } from "../../components/Header";
+import { Footer } from "../../components/Footer";
+import { toast } from "react-toastify";
 
 export const Login = () => {
   const [userData, setUserData] = useState({
-    email: '',
-    password: ''
+    email: "",
+    password: "",
   });
 
   const navigate = useNavigate();
-  const { saveUser } = useContext(UserContext)
+  const { saveUser } = useContext(UserContext);
 
   const userExists = async (email, password) => {
     try {
       const response = await getUser();
       const users = response.data;
 
-      const user = users.find((user) => user.body.email == email && user.body.password == password);
+      const user = users.find(
+        (user) => user.body.email == email && user.body.password == password
+      );
 
       return user || null;
     } catch (error) {
-      console.error('Erro ao verificar usuário:', error);
+      console.error("Erro ao verificar usuário:", error);
       return null;
     }
   };
@@ -38,10 +40,10 @@ export const Login = () => {
 
     if (user) {
       saveUser(user.body);
-      toast.success('Logado com sucesso!')
-      navigate('/')
+      toast.success("Logado com sucesso!");
+      navigate("/");
     } else {
-      toast.error('Dados incorretos.')
+      toast.error("Dados incorretos.");
     }
   };
 
@@ -49,14 +51,13 @@ export const Login = () => {
     const { name, value } = e.target;
     setUserData({
       ...userData,
-      [name]: value
+      [name]: value,
     });
   };
 
   return (
     <div className={styles.containerPrincipal}>
       <HeaderLogin />
-
       <section className={styles.body}>
         <div className={styles.containerForm}>
           <form onSubmit={handleLogin} className={styles.loginForm}>

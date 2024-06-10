@@ -1,4 +1,5 @@
-import {maria,
+import {
+  maria,
   zepex,
   fred,
   paixao,
@@ -23,164 +24,164 @@ import {maria,
   joao,
   mieleAmem,
   victor,
-  turma
+  turma,
 } from "../../assets";
 
 export const cards = [
   {
-    title: 'OODAMA Fred',
-    price: '0.1 ETH',
+    title: "OODAMA Fred",
+    price: "0.1 ETH",
     img: fred,
-    raridade: 'lendária'
+    raridade: "lendária",
   },
   {
-    title: 'Portugol 3',
-    price: '0.1 ETH',
+    title: "Portugol 3",
+    price: "0.1 ETH",
     img: raphael,
-    raridade: 'lendária'
+    raridade: "lendária",
   },
   {
-    title: 'Emanuel',
-    price: '0.07 ETH',
+    title: "Emanuel",
+    price: "0.07 ETH",
     img: felipe,
-    raridade: 'lendária'
+    raridade: "lendária",
   },
   {
-    title: 'Te amamos Jacqueline',
-    price: '0.1 ETH',
+    title: "Te amamos Jacqueline",
+    price: "0.1 ETH",
     img: jacqueline,
-    raridade: 'lendária'
+    raridade: "lendária",
   },
   {
-    title: 'Zepinhaaaa',
-    price: '0.1 ETH',
+    title: "Zepinhaaaa",
+    price: "0.1 ETH",
     img: zepex,
-    raridade: 'lendária'
+    raridade: "lendária",
   },
   {
-    title: 'Paixão',
-    price: '0.1 ETH',
+    title: "Paixão",
+    price: "0.1 ETH",
     img: paixao,
-    raridade: 'lendária'
+    raridade: "lendária",
   },
   {
-    title: 'Maria Teresa',
-    price: '0.1 ETH',
+    title: "Maria Teresa",
+    price: "0.1 ETH",
     img: maria,
-    raridade: 'lendária'
+    raridade: "lendária",
   },
   {
-    title: 'É o Bonnes, Vida',
-    price: '0.01 ETH',
+    title: "É o Bonnes, Vida",
+    price: "0.01 ETH",
     img: bonafe,
-    raridade: 'lendária'
+    raridade: "lendária",
   },
   {
-    title: 'Miela',
-    price: '0.5 ETH',
+    title: "Miela",
+    price: "0.5 ETH",
     img: miele,
-    raridade: 'lendária'
+    raridade: "lendária",
   },
   {
-    title: 'FAZ O L',
-    price: '0.06 ETH',
+    title: "FAZ O L",
+    price: "0.06 ETH",
     img: boeckL,
-    raridade: 'lendária'
+    raridade: "lendária",
   },
   {
-    title: 'Descanse em Paz',
-    price: '0.08 ETH',
+    title: "Descanse em Paz",
+    price: "0.08 ETH",
     img: gustavo,
-    raridade: 'lendária'
+    raridade: "lendária",
   },
   {
-    title: 'João do Mel',
-    price: '0.1 ETH',
+    title: "João do Mel",
+    price: "0.1 ETH",
     img: joao,
-    raridade: 'lendária'
+    raridade: "lendária",
   },
   {
-    title: 'Pepe Coringado',
-    price: '0.01 ETH',
+    title: "Pepe Coringado",
+    price: "0.01 ETH",
     img: pepeCoringa,
-    raridade: 'lendária'
+    raridade: "lendária",
   },
   {
-    title: 'KhezaCoringa',
-    price: '0.01 ETH',
+    title: "KhezaCoringa",
+    price: "0.01 ETH",
     img: khezacCoringa,
-    raridade: 'lendária'
+    raridade: "lendária",
   },
   {
-    title: 'Miele Coringado',
-    price: '0.01 ETH',
+    title: "Miele Coringado",
+    price: "0.01 ETH",
     img: mieleCoringa,
-    raridade: 'lendária'
+    raridade: "lendária",
   },
   {
-    title: 'Zeze Coringado',
-    price: '0.01 ETH',
+    title: "Zeze Coringado",
+    price: "0.01 ETH",
     img: zezeCoringa,
-    raridade: 'lendária'
+    raridade: "lendária",
   },
   {
-    title: 'Boeck Coringado',
-    price: '0.01 ETH',
+    title: "Boeck Coringado",
+    price: "0.01 ETH",
     img: boeckCoringa,
-    raridade: 'lendária'
+    raridade: "lendária",
   },
   {
-    title: 'Miguelito Cotoco',
-    price: '0.08 ETH',
+    title: "Miguelito Cotoco",
+    price: "0.08 ETH",
     img: miguelito,
-    raridade: 'lendária'
+    raridade: "lendária",
   },
   {
-    title: 'Zeze?????',
-    price: '??? ETH',
+    title: "Zeze?????",
+    price: "??? ETH",
     img: zeze,
-    raridade: 'lendária'
+    raridade: "lendária",
   },
   {
-    title: 'Eta aula boa',
-    price: '0.03 ETH',
+    title: "Eta aula boa",
+    price: "0.03 ETH",
     img: kaiky,
-    raridade: 'lendária'
+    raridade: "lendária",
   },
   {
-    title: 'Cesa',
-    price: '0.01 ETH',
+    title: "Cesa",
+    price: "0.01 ETH",
     img: cesar,
-    raridade: 'lendária'
+    raridade: "lendária",
   },
   {
-    title: 'Yuyuka',
-    price: '0.01 ETH',
+    title: "Yuyuka",
+    price: "0.01 ETH",
     img: yuyu,
-    raridade: 'lendária'
+    raridade: "lendária",
   },
   {
-    title: 'Victor',
-    price: '0.01 ETH',
+    title: "Victor",
+    price: "0.01 ETH",
     img: victor,
-    raridade: 'lendária'
+    raridade: "lendária",
   },
   {
-    title: 'Amém',
-    price: '0.05 ETH',
+    title: "Amém",
+    price: "0.05 ETH",
     img: mieleAmem,
-    raridade: 'lendária'
+    raridade: "lendária",
   },
   {
-    title: '00:00',
-    price: '0.09 ETH',
+    title: "00:00",
+    price: "0.09 ETH",
     img: pepeLatao,
-    raridade: 'lendária'
+    raridade: "lendária",
   },
   {
-    title: 'EMPREGADOS DO ANO',
-    price: '????????? ETH',
+    title: "EMPREGADOS DO ANO",
+    price: "????????? ETH",
     img: turma,
-    raridade: 'lendária'
-  }
-]
+    raridade: "lendária",
+  },
+];

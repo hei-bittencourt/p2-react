@@ -1,0 +1,59 @@
+.containerPrincipal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background: linear-gradient(150deg, #49086e 0%, #110720 50%, #110720 100%);
+}
+
+.body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 70px;
+    padding: 10px;
+    flex: 1;
+
+}
+
+.body h2 {
+    color: aliceblue;
+    width: 100%;
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 20px;
+    z-index: 999;
+    padding: 10px 0;
+}
+
+.catalogo {
+    min-height: 434.1px;
+    margin-top: 70px;
+    margin-bottom: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    max-width: 1650px;
+}
+
+.containerInterno {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.total {
+    display: inline-flex;
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgb(5, 143, 0);
+    gap: 1rem;
+}
+
+.total span {
+    color: #fff
+}

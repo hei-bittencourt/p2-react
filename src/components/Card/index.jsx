@@ -5,7 +5,7 @@ import { FaEthereum } from "react-icons/fa";
 import { ContextoCarrinho } from './../../contexts/CarrinhoContext';
 import { UserContext } from "../../contexts/userContext";
 import { useNavigate, useLocation } from 'react-router-dom';
-import { RemoveButton, FinalyButton } from "../Button/index.jsx";
+import { RemoveButton } from "../Button/index.jsx";
 import { toast } from 'react-toastify';
 
 
