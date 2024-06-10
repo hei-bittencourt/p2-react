@@ -30,6 +30,7 @@ export const Cart = () => {
     <div className={styles.containerPrincipal}>
       <Header />
       <section className={styles.body}>
+      <h2>Carrinho de Compras</h2>
       <div className={styles.catalogo}>
           <Carrinho
             itensCarrinho={itensCarrinho}
@@ -43,7 +44,6 @@ export const Cart = () => {
               </Link>
               )}
         </div>
-            <calcularTotal/>        
       </section>
       <Footer />
     </div>

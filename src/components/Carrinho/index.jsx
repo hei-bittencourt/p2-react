@@ -3,7 +3,7 @@ import { ContextoCarrinho } from "../../contexts/CarrinhoContext";
 import { FaEthereum } from "react-icons/fa";
 import { RemoveButton, FinalyButton } from "./../Button/index";
 import styles from "./styles.module.css";
-import { Card } from "../Card/index.jsx";
+import { Card } from "../../components/Card";
 
 export const Carrinho = () => {
   const { itensCarrinho, removerItemCarrinho, calcularTotal } =
@@ -22,28 +22,9 @@ export const Carrinho = () => {
   
   return (
     <div className={styles.container}>
-      <h2 className={styles.h2}>Carrinho de Compras</h2>
-      <div className={styles.gridContainer}>
+      <div className={styles.catalogo}>
         {itensCarrinho.map((item, index) => (
-          <div key={index} className={styles.gridItem}>
-            <div>
-              {item.img && (
-                <img src={item.img} alt={item.title} className={styles.image} />
-              )}
-            </div>
-            <div className={styles.cardFooter}>
-              <div className={styles.info}>
-                <p>{item.title}</p>
-                <p>
-                  {item.price} <FaEthereum color="#c0c0c0" />
-                </p>
-              </div>
-              <RemoveButton
-                title={"Remover"}
-                onClick={() => removerItemCarrinho(item.title)}
-              />
-            </div>
-          </div>
+            <Card key={index} cardProps={item} />
         ))}
         <div className={styles.totalContainer}>
           <h3 className={styles.total}>
