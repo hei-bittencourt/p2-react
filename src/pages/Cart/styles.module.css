@@ -25,6 +25,15 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+.body h2{
+    color: aliceblue;
+    transform: color 0.5s;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px ;
+    
+}
 .catalogo {
     width: 100%;
     display: flex;

@@ -43,7 +43,7 @@ export const Marketplace = () => {
   }
   return (
     <div className={styles.containerPrincipal}>
-      <div className={styles.headerMarkt}>
+      <div>
       <HeaderMarket />
       </div>
       <section className={styles.body}>

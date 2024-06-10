@@ -1,19 +1,35 @@
 .container{
     display:flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 100px;
 }
-.h2{
+.container h2{
     color: aliceblue;
     transform: color 0.5s;
     text-align: center;
     font-size: 24px;
     margin-bottom: 20px ;
+    
 }
 .h2 :hover{
   color: red;
 
+}
+
+.catalogo {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding-top: 12rem;
+  padding-bottom: 12rem;
+  gap: 1.5rem;
+  margin-block: 1rem;
+  max-width: 1650px;
+  margin: 0 auto;
 }
 
 .image {
