@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 import { ContextoCarrinho } from "../../contexts/CarrinhoContext";
 import { FaEthereum } from "react-icons/fa";
-import { RemoveButton, FinalyButton } from "./../Button/index";
+// import { RemoveButton, FinalyButton } from "./../Button/index";
 import styles from "./styles.module.css";
-import { Card } from "../../components/Card";
+
 
 export const Carrinho = () => {
-  const { itensCarrinho, removerItemCarrinho, calcularTotal } =
+  const { itensCarrinho } =
     useContext(ContextoCarrinho);
 
     const calcularTotalSeguro = () => {
@@ -21,17 +21,17 @@ export const Carrinho = () => {
     };
   
   return (
-    <div className={styles.container}>
-      <div className={styles.catalogo}>
-        {itensCarrinho.map((item, index) => (
+    <div >
+      {/* <div className={styles.catalogo}> */}
+        {/* {itensCarrinho.map((item, index) => (
             <Card key={index} cardProps={item} />
-        ))}
-        <div className={styles.totalContainer}>
-          <h3 className={styles.total}>
-            Total: {calcularTotalSeguro().toFixed(3)} <FaEthereum color="#c0c0c0" />
-          </h3>
-        </div>
-      </div>
+        ))} */}
+        {/* <div className={styles.totalContainer}> */}
+          <p className={styles.total}>
+            Total: {calcularTotalSeguro().toFixed(2)} <FaEthereum  />
+          </p>
+        {/* </div> */}
+      {/* </div> */}
     </div>
   );
 };

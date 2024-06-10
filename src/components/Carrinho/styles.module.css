@@ -5,7 +5,7 @@
     align-items: center;
     margin: 100px;
 }
-.container h2{
+/* .container h2{
     color: aliceblue;
     transform: color 0.5s;
     text-align: center;
@@ -13,6 +13,7 @@
     margin-bottom: 20px ;
     
 }
+
 .h2 :hover{
   color: red;
 
@@ -60,10 +61,10 @@
 .totalContainer {
   margin-top: 20px;
   text-align: right;
-}
+} */
 
 .total {
   font-size: 1.5rem;
   font-weight: bold;
-  color: red;
+  color: rgb(248, 38, 38);
 }
