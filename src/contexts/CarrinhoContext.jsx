@@ -1,4 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
+import { toast } from 'react-toastify';
 
 export const ContextoCarrinho = createContext();
 
@@ -33,6 +34,11 @@ export const ProvedorCarrinho = ({ children }) => {
     const novoCarrinho = itensCarrinho.filter((item) => item.title !== itemTitle)
     setItensCarrinho(novoCarrinho);
     localStorage.setItem("itens-carrinho",JSON.stringify(novoCarrinho) )
+    toast.success('Item removido do carrinho.');
+  };
+
+  const limpaCarrinho = () => {
+    setItensCarrinho([])
   };
 
   const alternarCarrinho = () => {
@@ -52,6 +58,7 @@ export const ProvedorCarrinho = ({ children }) => {
         carrinhoAberto,
         alternarCarrinho,
         calcularTotal,
+        limpaCarrinho
       }}
     >
       {children}

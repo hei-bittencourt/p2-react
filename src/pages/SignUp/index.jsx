@@ -5,6 +5,7 @@ import styles from './styles.module.css'
 import { useNavigate } from 'react-router-dom';
 import { HeaderRegister } from '../../components/Header';
 import { Footer } from '../../components/Footer';
+import { toast } from 'react-toastify';
 
 export const SignUp = () => {
   const [userData, setUserData] = useState({
@@ -24,9 +25,8 @@ export const SignUp = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    console.log(userData)
     postUser(userData)
+    toast.success('Usuário criado com sucesso!')
     navigate('/login')
   };
 

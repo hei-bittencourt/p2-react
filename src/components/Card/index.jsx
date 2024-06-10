@@ -6,6 +6,7 @@ import { ContextoCarrinho } from './../../contexts/CarrinhoContext';
 import { UserContext } from "../../contexts/userContext";
 import { useNavigate, useLocation } from 'react-router-dom';
 import { RemoveButton, FinalyButton } from "../Button/index.jsx";
+import { toast } from 'react-toastify';
 
 
 export const Card = ({ cardProps }) => {
@@ -22,9 +23,11 @@ export const Card = ({ cardProps }) => {
         quantidade: 1,
         img: cardProps.img,
         raridade: cardProps.raridade
-      })
+      }
+    )
+    toast.success('Item adicionado ao carrinho.');
     }else{
-      alert('É preciso estar logado')
+      toast.error('É preciso estar logado.');
       navigate('/login')
     }
   }

@@ -26,7 +26,6 @@ export const UserProvider = ({children}) =>{
 
     const logoutUser = () => {
         setUser(null);
-        console.log(user)
         localStorage.removeItem('user');
     }
 

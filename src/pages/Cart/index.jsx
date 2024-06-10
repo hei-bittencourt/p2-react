@@ -6,23 +6,29 @@ import { Carrinho, ModeloCarrinho } from "../../components/Carrinho";
 import { Footer } from "./../../components/Footer/index";
 import { ContextoCarrinho } from "./../../contexts/CarrinhoContext";
 import { FinalyButton } from "../../components/Button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
+import { toast } from 'react-toastify';
 
 export const Cart = () => {
-  const { itensCarrinho, removerItemCarrinho } = useContext(ContextoCarrinho);
+  const { itensCarrinho, removerItemCarrinho, limpaCarrinho } = useContext(ContextoCarrinho);
   const [compraFinalizada, setCompraFinalizada] = useState(false);
-
+  const navigate = useNavigate();
   const itens = itensCarrinho && itensCarrinho.length > 0
 
   useEffect(() => {
+
     if (compraFinalizada) {
-      alert('Compra Finalizada');
-      setCompraFinalizada(false); // Reset the state after alert
+      setCompraFinalizada(false);
     }
   }, [compraFinalizada]);
 
   const clicarParaFinalizar = () => {
     setCompraFinalizada(true);
+    toast.success('Compra realizada com sucesso!');
+    limpaCarrinho();
+    navigate('/marketplace')
+
   };
 
 
@@ -37,7 +43,7 @@ export const Cart = () => {
             removerItemCarrinho={removerItemCarrinho}
           />
           {itens ? (
-            <FinalyButton title={'Finalizar Compra'} onCLick={clicarParaFinalizar} />
+            <FinalyButton title={'Finalizar Compra'} onClick={clicarParaFinalizar} />
           ) : (
               <Link to='/marketplace'>
               <FinalyButton title={'Adicionar ao Carrinho'}/>
