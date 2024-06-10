@@ -3,15 +3,11 @@
     width: 100vw;
     height: 60px;
     background-color: transparent;
-    
-    
     display: flex;
     align-items: center;
     justify-content: space-around;
-
     position: absolute;
     top: 1rem;
-    
 }
 
 .nomeLoja {
@@ -40,10 +36,9 @@
     font-family: "PT Sans Norrow", monospace;
 }
 
-.header nav a {     
-       
+.header nav a {
     text-decoration: none;
-    color: #fff;    
+    color: #fff;
     padding-right: 5rem;
     font-size: 1.8rem;
     transition: .5s ease-in-out;
@@ -51,16 +46,15 @@
 
 .header nav a:hover {
     color: #9e02f8;
-    text-shadow: -7px 6px 20px  black;
+    text-shadow: -7px 6px 20px black;
     transition: .5s ease-in-out;
 }
 
-.header nav  {
-   display: flex;
-   gap: 5rem;
+.header nav {
+    display: flex;
+    gap: 5rem;
 }
 
-.header p{
-    color: white;  
-    
+.header p {
+    color: white;
 }
