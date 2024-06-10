@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../../contexts/userContext.jsx';
 import { HeaderLogin } from '../../components/Header';
 import { Footer } from '../../components/Footer';
+import { toast } from 'react-toastify';
 
 export const Login = () => {
   const [userData, setUserData] = useState({
@@ -37,10 +38,10 @@ export const Login = () => {
 
     if (user) {
       saveUser(user.body);
-      alert('Logado com sucesso!')
+      toast.success('Logado com sucesso!')
       navigate('/')
     } else {
-      alert('Dados incorretos.')
+      toast.error('Dados incorretos.')
     }
   };
 
