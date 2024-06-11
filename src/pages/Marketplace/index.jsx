@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import styles from "./styles.module.css";
 import { getCharacter } from "../../services/animeApi";
 import { Card } from "../../components/Card";
-import { generateRandomPrice } from "../../functions/generateRandomPrice";
+import { generateRandomPrice, generateRandomPriceLendarias } from "../../functions/generateRandomPrice";
 import { HeaderMarket } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import { CategoryContext } from "../../contexts/CategoryContext";
@@ -10,8 +10,7 @@ import { cards } from "../../services/cardsData";
 
 export const Marketplace = () => {
   const [characterList, setCharacterList] = useState([]);
-  const { category } = useContext(CategoryContext);
- 
+  const { category } = useContext(CategoryContext); 
 
   useEffect(() => {
     getApiData(category);
@@ -29,17 +28,21 @@ export const Marketplace = () => {
           raridade: "comum",
         }));
         setCharacterList(resultsToCard);
+        
       } catch {
         console.log("deu erro");
       }
-    } else {
-      setCharacterList(cards);
+    } else {      
+      cards.forEach(card => {
+        card.price = generateRandomPriceLendarias()})  
+        setCharacterList(cards);        
     }
   };
+
   return (
     <div className={styles.containerPrincipal}>
       <div>
-        <HeaderMarket />
+        <HeaderMarket  />
       </div>
       <section className={styles.body}>
         <div className={styles.catalogo}>
